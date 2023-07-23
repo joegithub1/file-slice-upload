@@ -1,0 +1,23 @@
+server:
+  port: 9083
+  servlet:
+    context-path: /fileServer
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+    enabled: true
+    suffix: .html
+  mvc:
+    static-path-pattern: /**
+file: #上传的路径前缀
+  #windows环境  文件上传到这个目录下
+  basePathWindows: D:/fieDowns/fileUpload/
+  #liunx环境  文件上传到这个目录下
+  basePathLiunx: /home
+  #下载文件的访问前缀
+  baseDownPath: http://127.0.0.1:9083/uploadFile
